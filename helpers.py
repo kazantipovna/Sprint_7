@@ -63,7 +63,7 @@ def get_deliver_id(login, password):
 
 @allure.step('Удаляем курьера по его id:')
 def delete_deliver(deliver_id):
-    """Удаляет курьера по его id"""
+    """Удаляет курьера по его id """
     payload = {"id": deliver_id}
     response = requests.delete(urls.register_url + f'/{deliver_id}', data=payload)
     return response
