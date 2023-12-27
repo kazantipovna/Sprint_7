@@ -21,7 +21,8 @@
 * __test_deliver_login.py__ - тесты логина курьера:
   * **Тесты:**
     * test_login_expected_id_in_response - тест успешной авторизации
-    * test_login_empty_required_field_expected_error - Тест логина с незаполненным логином или незаполненным паролем
+    * test_login_empty_login_field_expected_error - Тест логина с незаполненным логином
+    * test_login_empty_pass_field_expected_error - Тест логина с незаполненным паролем
     * test_login_unregister_user_expected_error - Тест логина незарегистрированного курьера
 
 * __test_order.py__ - тесты цветов при заказе:
@@ -34,8 +35,10 @@
 
 * __helpers.py__ - вспомогательные методы
   * register_new_courier_and_return_login_password - метод создания курьера, возвращает его данные
-  * delete_deliver - метод удяляет курьера по его id
+  * create_payload - Заполняет payload из данных курьера
+  * create_post_response - Создает post запрос
   * get_deliver_id - возвращает id курьера
+  * delete_deliver - метод удаляет курьера по его id
 
 * __conftest.py__ - фикстуры
 

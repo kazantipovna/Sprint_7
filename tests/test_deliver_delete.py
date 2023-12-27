@@ -1,7 +1,7 @@
 import allure
-from data import resp_codes_msg
 import helpers
 import pytest_check as check
+from tests.data import resp_codes_msg
 
 
 class TestDeliverDelete:
@@ -12,6 +12,5 @@ class TestDeliverDelete:
         """Проверяем удаление курьера"""
         deliver = helpers.register_new_courier_and_return_login_password()
         del_deliver = helpers.delete_deliver(deliver[3])
-        with allure.step(f'Проверяем ответ = {del_deliver}:'):
-            assert resp_codes_msg.code_201 in del_deliver.text
-            check.equal(del_deliver.status_code, 200)
+        assert resp_codes_msg.code_201 in del_deliver.text
+        check.equal(del_deliver.status_code, 200)
